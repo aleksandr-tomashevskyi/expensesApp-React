@@ -1,4 +1,7 @@
-import Expenses from "./components/Expenses";
+import React from 'react';
+
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense"
 import "./App.css";
 
 function App() {
@@ -25,7 +28,7 @@ function App() {
   ];
   return (
     <div className="App">
-      <h2>Let's get started!</h2>
+      <NewExpense />
       <p>This is also visible!</p>
       <Expenses propsData = {expenses} />
     </div>
