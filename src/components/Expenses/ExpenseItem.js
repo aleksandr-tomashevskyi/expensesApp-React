@@ -10,7 +10,6 @@ import Card from '../UI/Card';
 function ExprenseItem(props) {
 
 const [title, setTitle] = useState(props.title);
-console.log(title);
 
 
 function clickHandler(){
