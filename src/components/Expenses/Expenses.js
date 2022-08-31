@@ -3,10 +3,17 @@ import React from 'react';
 import './Expenses.css';
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
+import ExpensesFilter from './ExpensesFilter';
 
 function Expenses(props) {
+
+  function applyFilterOption(option){
+    console.log("This is the choosen option:", option)
+  }
+
   return (
     <Card className="expenses">
+    <ExpensesFilter onApplyFilterOption = {applyFilterOption}/>
       <ExpenseItem
         title={props.propsData[0].title}
         amount={props.propsData[0].amount}
