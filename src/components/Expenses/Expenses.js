@@ -14,9 +14,9 @@ function Expenses(props) {
     setEnteredOption(option);
   }
 
-  const filteredArray = props.propsData.filter((item)=> item.date.getFullYear() == enteredFilterOption);
+  const filteredArray = props.propsData.filter(item => item.date.getFullYear().toString() == enteredFilterOption);
 
-  // console.log(props.propsData.filter((item)=> item.date.getFullYear() == enteredFilterOption))
+  console.log(props.propsData.filter(item => item.date.getFullYear().toString() === enteredFilterOption))
 
   return (
     <Card className="expenses">
