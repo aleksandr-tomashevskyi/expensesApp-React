@@ -35,7 +35,6 @@ function App() {
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpenseHandler}/>
-      <p>This is also visible!</p>
       <Expenses propsData = {expenses} />
     </div>
   );

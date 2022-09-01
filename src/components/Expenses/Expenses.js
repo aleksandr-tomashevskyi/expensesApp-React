@@ -17,26 +17,14 @@ function Expenses(props) {
   return (
     <Card className="expenses">
     <ExpensesFilter onApplyFilterOption = {applyFilterOption} initialOption = {enteredFilterOption}/>
-      <ExpenseItem
-        title={props.propsData[0].title}
-        amount={props.propsData[0].amount}
-        date={props.propsData[0].date}
-      />
-      <ExpenseItem
-        title={props.propsData[1].title}
-        amount={props.propsData[1].amount}
-        date={props.propsData[1].date}
-      />
-      <ExpenseItem
-        title={props.propsData[2].title}
-        amount={props.propsData[2].amount}
-        date={props.propsData[2].date}
-      />
-      <ExpenseItem
-        title={props.propsData[3].title}
-        amount={props.propsData[3].amount}
-        date={props.propsData[3].date}
-      />
+    
+    {props.propsData.map((item)=>(
+    <ExpenseItem
+    title={item.title}
+    amount={item.amount}
+    date={item.date}
+  />
+  ))}
     </Card>
   );
 }
