@@ -10,7 +10,7 @@ function Expenses(props) {
    const [enteredFilterOption, setEnteredOption] = useState('2020');
 
   function applyFilterOption(option){
-    console.log("This is the choosen option:", option)
+    console.log("This is the chosen option:", option)
     setEnteredOption(option);
   }
 
