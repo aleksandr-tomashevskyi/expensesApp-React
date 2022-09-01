@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './Expenses.css';
 import ExpenseItem from "./ExpenseItem";
@@ -7,13 +7,16 @@ import ExpensesFilter from './ExpensesFilter';
 
 function Expenses(props) {
 
+   const [enteredFilterOption, setEnteredOption] = useState('2020');
+
   function applyFilterOption(option){
     console.log("This is the choosen option:", option)
+    setEnteredOption(option);
   }
 
   return (
     <Card className="expenses">
-    <ExpensesFilter onApplyFilterOption = {applyFilterOption}/>
+    <ExpensesFilter onApplyFilterOption = {applyFilterOption} initialOption = {enteredFilterOption}/>
       <ExpenseItem
         title={props.propsData[0].title}
         amount={props.propsData[0].amount}
