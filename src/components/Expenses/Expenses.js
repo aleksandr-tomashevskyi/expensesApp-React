@@ -14,15 +14,13 @@ function Expenses(props) {
     setEnteredOption(option);
   }
 
-  const filteredArray = props.propsData.filter(item => item.date.getFullYear().toString() == enteredFilterOption);
-
-  console.log(props.propsData.filter(item => item.date.getFullYear().toString() === enteredFilterOption))
+  const filteredExpensesArray = props.propsData.filter(item => item.date.getFullYear().toString() === enteredFilterOption);
 
   return (
     <Card className="expenses">
     <ExpensesFilter onApplyFilterOption = {applyFilterOption} initialOption = {enteredFilterOption}/>
-    
-    {filteredArray.map((item)=>(
+    {filteredExpensesArray.length === 0 && <p>No expenses found</p>}
+    {filteredExpensesArray.length > 0 && filteredExpensesArray.map((item)=>(
     <ExpenseItem
     key={item.id}
     title={item.title}
