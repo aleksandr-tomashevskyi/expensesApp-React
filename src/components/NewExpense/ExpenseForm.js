@@ -3,9 +3,15 @@ import './ExpenseForm.css';
 
 function ExpenseForm(props){
 
+   const [formVisibility, setFormVisibility] = useState(false);
+
    const [enteredTitle, setEnteredTitle] = useState('');
    const [enteredAmount, setEnteredAmount] = useState('');
    const [enteredDate, setEnteredDate] = useState('');
+
+   function formVisibilityHandler(){
+      setFormVisibility(!formVisibility);
+   }
 
    function titleChangeHandler(event){
       setEnteredTitle(event.target.value);
@@ -33,6 +39,13 @@ function ExpenseForm(props){
       setEnteredTitle('');
       setEnteredAmount('');
       setEnteredDate('');
+      formVisibilityHandler();
+   }
+
+   if(!formVisibility){
+      return (
+      <button onClick={formVisibilityHandler} type="cancel">Add New Expense</button>
+      )
    }
 
    return (
@@ -52,6 +65,7 @@ function ExpenseForm(props){
          </div>
       </div>
       <div className='new-expense__actions'>
+         <button onClick={formVisibilityHandler} type="cancel">Cancel</button>
          <button type="submit">Add Expense</button>
       </div>
       </form>
